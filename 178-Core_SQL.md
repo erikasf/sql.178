@@ -38,18 +38,18 @@ Becoming a full stack web developer means that you need to be comfortable with w
 - [ x] Complete the [Advanced SQL queries course](https://www.khanacademy.org/computing/computer-programming/sql#more-advanced-sql-queries)
 
 ### Day 2: Relational Queries
-- [ ] Complete the [Relational Queries course](https://www.khanacademy.org/computing/computer-programming/sql#relational-queries-in-sql)
-- [ ] Complete the [Modifying databases with SQL course](https://www.khanacademy.org/computing/computer-programming/sql#modifying-databases-with-sql)
+- [ x] Complete the [Relational Queries course](https://www.khanacademy.org/computing/computer-programming/sql#relational-queries-in-sql)
+- [ x] Complete the [Modifying databases with SQL course](https://www.khanacademy.org/computing/computer-programming/sql#modifying-databases-with-sql)
 
 ### Day 3: Install Postgres and Complete Tutorials with psql
-- [ ] Install Homebrew by following instructions listed [here](https://gist.github.com/punitrathore/ca32542fddd0d8b625aab610c35e4545)
-- [ ] Install Postgres by following instructions listed [here](https://gist.github.com/punitrathore/ca32542fddd0d8b625aab610c35e4545#install-postgres)
+- [x ] Install Homebrew by following instructions listed [here](https://gist.github.com/punitrathore/ca32542fddd0d8b625aab610c35e4545)
+- [ x ]Install Postgres by following instructions listed [here](https://gist.github.com/punitrathore/ca32542fddd0d8b625aab610c35e4545#install-postgres)
 - [ ] Learn the `psql` command line tool by working through the following tutorials
-  - [ ] complete the tutorial for `createdb` [here](https://www.tutorialspoint.com/postgresql/postgresql_create_database.htm)
-  - [ ] complete the tutorial for selecting the database [here](https://www.tutorialspoint.com/postgresql/postgresql_select_database.htm)
-  - [ ] complete the tutorial for dropping the database [here](https://www.tutorialspoint.com/postgresql/postgresql_drop_database.htm)
-  - [ ] complete the tutorial for `create table` [here](https://www.tutorialspoint.com/postgresql/postgresql_create_table.htm)
-  - [ ] complete the tutorial for `drop table` [here](https://www.tutorialspoint.com/postgresql/postgresql_drop_table.htm)
+  - [x ] complete the tutorial for `createdb` [here](x)
+  - [ x] complete the tutorial for selecting the database [here](https://www.tutorialspoint.com/postgresql/postgresql_select_database.htm)
+  - [x ] complete the tutorial for dropping the database [here](https://www.tutorialspoint.com/postgresql/postgresql_drop_database.htm)
+  - [x ] complete the tutorial for `create table` [here](https://www.tutorialspoint.com/postgresql/postgresql_create_table.htm)
+  - [ x] complete the tutorial for `drop table` [here](https://www.tutorialspoint.com/postgresql/postgresql_drop_table.htm)
   - [ ] complete the tutorial for `schema` [here](https://www.tutorialspoint.com/postgresql/postgresql_schema.htm)
   - [ ] complete the tutorial for `insert` [here](https://www.tutorialspoint.com/postgresql/postgresql_insert_query.htm)
   - [ ] complete the tutorial for `select` [here](https://www.tutorialspoint.com/postgresql/postgresql_select_query.htm)
@@ -83,7 +83,7 @@ Becoming a full stack web developer means that you need to be comfortable with w
 - [ ] Complete the [SQL Bolt tutorial](https://sqlbolt.com/)
 
 ### Stretch
-- [ ] Complete the [Codeacademy course on SQL](https://www.codecademy.com/learn/learn-sql)
+- [ x] Complete the [Codeacademy course on SQL](https://www.codecademy.com/learn/learn-sql)
 - [ ] Complete the [SQL Zoo quizzes](http://sqlzoo.net/wiki/Tutorial_Quizzes)
 
 ### Quality Rubric

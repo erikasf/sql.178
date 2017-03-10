@@ -1,0 +1,408 @@
+➜  /bin cd ../
+➜  / pgsql -v
+zsh: correct 'pgsql' to 'psql' [nyae]? y
+psql: option requires an argument -- v
+Try "psql --help" for more information.
+➜  / psql --v
+psql: option `--v' is ambiguous
+Try "psql --help" for more information.
+➜  / psql --h
+psql: option `--h' is ambiguous
+Try "psql --help" for more information.
+➜  / psql --help
+psql is the PostgreSQL interactive terminal.
+
+Usage:
+  psql [OPTION]... [DBNAME [USERNAME]]
+
+General options:
+  -c, --command=COMMAND    run only single command (SQL or internal) and exit
+  -d, --dbname=DBNAME      database name to connect to (default: "erikaharvey")
+  -f, --file=FILENAME      execute commands from file, then exit
+  -l, --list               list available databases, then exit
+  -v, --set=, --variable=NAME=VALUE
+                           set psql variable NAME to VALUE
+                           (e.g., -v ON_ERROR_STOP=1)
+  -V, --version            output version information, then exit
+  -X, --no-psqlrc          do not read startup file (~/.psqlrc)
+  -1 ("one"), --single-transaction
+                           execute as a single transaction (if non-interactive)
+  -?, --help[=options]     show this help, then exit
+      --help=commands      list backslash commands, then exit
+      --help=variables     list special variables, then exit
+
+Input and output options:
+  -a, --echo-all           echo all input from script
+  -b, --echo-errors        echo failed commands
+  -e, --echo-queries       echo commands sent to server
+  -E, --echo-hidden        display queries that internal commands generate
+  -L, --log-file=FILENAME  send session log to file
+  -n, --no-readline        disable enhanced command line editing (readline)
+  -o, --output=FILENAME    send query results to file (or |pipe)
+  -q, --quiet              run quietly (no messages, only query output)
+  -s, --single-step        single-step mode (confirm each query)
+  -S, --single-line        single-line mode (end of line terminates SQL command)
+
+Output format options:
+  -A, --no-align           unaligned table output mode
+  -F, --field-separator=STRING
+                           field separator for unaligned output (default: "|")
+  -H, --html               HTML table output mode
+  -P, --pset=VAR[=ARG]     set printing option VAR to ARG (see \pset command)
+  -R, --record-separator=STRING
+                           record separator for unaligned output (default: newline)
+  -t, --tuples-only        print rows only
+  -T, --table-attr=TEXT    set HTML table tag attributes (e.g., width, border)
+  -x, --expanded           turn on expanded table output
+  -z, --field-separator-zero
+                           set field separator for unaligned output to zero byte
+  -0, --record-separator-zero
+                           set record separator for unaligned output to zero byte
+
+Connection options:
+  -h, --host=HOSTNAME      database server host or socket directory (default: "local socket")
+  -p, --port=PORT          database server port (default: "5432")
+  -U, --username=USERNAME  database user name (default: "erikaharvey")
+  -w, --no-password        never prompt for password
+  -W, --password           force password prompt (should happen automatically)
+
+For more information, type "\?" (for internal commands) or "\help" (for SQL
+commands) from within psql, or consult the psql section in the PostgreSQL
+documentation.
+
+Report bugs to <pgsql-bugs@postgresql.org>.
+➜  / dbname
+zsh: command not found: dbname
+➜  / psql --host-HOSTNAME
+psql: unrecognized option `--host-HOSTNAME'
+Try "psql --help" for more information.
+➜  / psql/erikaharvey --host-HOSTNAME
+zsh: no such file or directory: psql/erikaharvey
+➜  / createdb erikaharvey
+createdb: database creation failed: ERROR:  database "erikaharvey" already exists
+➜  / psql mydb
+psql: FATAL:  database "mydb" does not exist
+➜  / psql erikaharvey
+psql (9.6.2)
+Type "help" for help.
+
+erikaharvey=# --host
+erikaharvey=# --host-HOSTNAME
+erikaharvey=# CREATE TABLE
+erikaharvey-# ^C
+erikaharvey=# ^C
+erikaharvey=# help
+You are using psql, the command-line interface to PostgreSQL.
+Type:  \copyright for distribution terms
+       \h for help with SQL commands
+       \? for help with psql commands
+       \g or terminate with semicolon to execute query
+       \q to quit
+erikaharvey=# \q
+➜  / psql erikaharvey
+psql (9.6.2)
+Type "help" for help.
+
+erikaharvey=# psql erikaharvey
+erikaharvey-# ls
+erikaharvey-# create table \q
+➜  / ~
+➜  ~ brew cask install postico
+==> Tapping caskroom/cask
+Cloning into '/usr/local/Homebrew/Library/Taps/caskroom/homebrew-cask'...
+remote: Counting objects: 3699, done.
+remote: Compressing objects: 100% (3683/3683), done.
+remote: Total 3699 (delta 36), reused 352 (delta 12), pack-reused 0
+Receiving objects: 100% (3699/3699), 1.23 MiB | 1.59 MiB/s, done.
+Resolving deltas: 100% (36/36), done.
+Tapped 0 formulae (3,708 files, 3.8MB)
+==> Creating Caskroom at /usr/local/Caskroom
+==> We'll set permissions properly so we won't need sudo in the future
+Password:
+==> Satisfying dependencies
+complete
+==> Downloading https://s3-eu-west-1.amazonaws.com/eggerapps-downloads/postico-1
+######################################################################## 100.0%
+==> Verifying checksum for Cask postico
+==> Moving App 'Postico.app' to '/Applications/Postico.app'
+🍺  postico was successfully installed!
+➜  ~ /q
+zsh: no such file or directory: /q
+➜  ~ cd ../
+➜  /Users cd ../
+➜  / \q
+zsh: command not found: q
+➜  / /q
+zsh: no such file or directory: /q
+➜  / pqsl
+zsh: correct 'pqsl' to 'psql' [nyae]? y
+psql (9.6.2)
+Type "help" for help.
+
+erikaharvey=# CREATE SCHEMA name;
+CREATE SCHEMA
+erikaharvey=# create table myschema.company(
+erikaharvey(# ID INT NOT NULL, NAME VARCHAR 920) NOT NULL, AGE INT NOT NULL, ADRESS CHAR (25), SALARY DECIMAL (18,2),PRIMARY KEY(ID));
+ERROR:  syntax error at or near "920"
+LINE 2: ID INT NOT NULL, NAME VARCHAR 920) NOT NULL, AGE INT NOT NUL...
+                                      ^
+erikaharvey=# create table myschema.company(
+ID INT NOT NULL, NAME VARCHAR (20) NOT NULL, AGE INT NOT NULL, ADRESS CHAR (25), SALARY DECIMAL (18,2),PRIMARY KEY(ID));
+ERROR:  schema "myschema" does not exist
+LINE 1: create table myschema.company(
+                     ^
+erikaharvey=# CREATE TABLE NAME.COMPANY(ID INT NOT NULL, NAME VARCHAR(20) NOT NULL, AGE INT NOT NULL, ADDRESS CHAR(25),SALARY DECIMAL(18,2), PRIMARY KEY(ID));
+CREATE TABLE
+erikaharvey=# SELECT*FROM NAME.COMPANY
+erikaharvey-# select*from name.company ;
+ERROR:  syntax error at or near "select"
+LINE 2: select*from name.company ;
+        ^
+erikaharvey=# SELECT*FROM name.company;
+ id | name | age | address | salary
+----+------+-----+---------+--------
+(0 rows)
+
+erikaharvey=#
+erikaharvey=# CREATE TABLE COMPANY
+erikaharvey-# ID INT PRIMARY KEY NOT NULL, NAME TEXT NOT NULL, AGE INT NOT NULL, ADDRESS CHAR(50), SLARAY REAL, JOIN_DATE);
+ERROR:  syntax error at or near "ID"
+LINE 2: ID INT PRIMARY KEY NOT NULL, NAME TEXT NOT NULL, AGE INT NOT...
+        ^
+erikaharvey=# CREATE TABLE COMPANY(ID INT PRIMARY KEY     NOT NULL,
+erikaharvey(#    NAME           TEXT    NOT NULL,
+erikaharvey(#    AGE            INT     NOT NULL,
+erikaharvey(#    ADDRESS        CHAR(50),
+erikaharvey(#    SALARY         REAL,
+erikaharvey(#    JOIN_DATE      DATE
+erikaharvey(# );
+CREATE TABLE
+erikaharvey=# SELECT*FROM COMPANY
+erikaharvey-# company
+erikaharvey-# INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY,JOIN_DATE) VALUES (1, 'Paul', 32, 'California', 20000.00 ,'2001-07-13');
+ERROR:  syntax error at or near "INSERT"
+LINE 3: INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY,JOIN_DATE) V...
+        ^
+erikaharvey=# INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY,JOIN_DATE) VALUES (1, 'Paul', 32, 'California', 20000.00 ,'2001-07-13');
+INSERT 0 1
+erikaharvey=# INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,JOIN_DATE) VALUES (2, 'Allen', 25, 'Texas', '2007-12-13');
+INSERT 0 1
+erikaharvey=# INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY,JOIN_DATE) VALUES (3, 'Teddy', 23, 'Norway', 20000.00, DEFAULT );
+INSERT 0 1
+erikaharvey=# INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY,JOIN_DATE) VALUES (4, 'Mark', 25, 'Rich-Mond ', 65000.00, '2007-12-13' ), (5, 'David', 27, 'Texas', 85000.00 , '2007-12-13');
+INSERT 0 2
+erikaharvey=# All the above statements would create the following records in COMPANY table. Next chapter will teach you how to display all these records from a table.
+erikaharvey-#
+erikaharvey-#
+erikaharvey-# ID        NAME        AGE        ADDRESS     SALARY       JOIN_DATE
+erikaharvey-# ----      ----------  -----      ----------  -------   --------
+erikaharvey-# 1         Paul        32         California  20000.0    2001-07-13
+erikaharvey-# 2         Allen       25         Texas                  2007-12-13
+erikaharvey-# 3         Teddy       23         Norway      20000.0
+erikaharvey-# 4         Mark        25         Rich-Mond   65000.0    2007-12-13
+erikaharvey-# 5         David       27         Texas       85000.0    2007-12-13
+
+
+erikaharvey-#
+erikaharvey-#  Previous Page  Print  PDF Next Page
+erikaharvey-# Advertisements
+erikaharvey-#
+erikaharvey-#
+erikaharvey-#  img  img  img  img  img  img
+erikaharvey-#
+erikaharvey-#
+erikaharvey-#
+erikaharvey-#
+erikaharvey-#
+erikaharvey-#
+erikaharvey-# INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY,JOIN_DATE) VALUES (4, 'Mark', 25, 'Rich-Mond ', 65000.00, '2007-12-13' ), (5, 'David', 27, 'Texas'
+
+
+
+ id | name  | age |                      address                       | salary | join_date
+----+-------+-----+----------------------------------------------------+--------+------------
+  4 | Mark  |  25 | Rich-Mond                                          |  65000 | 2007-12-13
+  5 | David |  27 | Texas                                              |  85000 | 2007-12-13
+(2 rows)
+
+...skipping...
+, 85000.00 , '2007-12-13');
+ERROR:  syntax error at or near "All"
+LINE 1: All the above statements would create the following records ...
+        ^
+erikaharvey=# INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY,JOIN_DATE) VALUES (4, 'Mark', 25, 'Rich-Mond ', 65000.00, '2007-12-13' ), (5, 'David', 27, 'Texas', 85000.00 , '2007-12-13');
+ERROR:  duplicate key value violates unique constraint "company_pkey"
+DETAIL:  Key (id)=(4) already exists.
+erikaharvey=# SELECT * FROM company;
+erikaharvey=#
+erikaharvey=#
+erikaharvey=# SELECT * FROM company
+erikaharvey-# SELECT * FROM COMPANY;
+ERROR:  syntax error at or near "SELECT"
+LINE 2: SELECT * FROM COMPANY;
+        ^
+erikaharvey=# SELECT * FROM COMPANY WHERE ARE >= 25 AND SALARY >=65000
+erikaharvey-# SELECT * FROM COMPANY WHERE AGE <= 25 OR SALARY >= 65000
+erikaharvey-# SELECT * FROM COMPANY WHERE AGE IS NOT NULL;
+ERROR:  syntax error at or near "SELECT"
+LINE 2: SELECT * FROM COMPANY WHERE AGE <= 25 OR SALARY >= 65000
+        ^
+erikaharvey=# SELECT * FROM COMPANY WHERE AGE >= 25 AND SALARY >= 65000;
+erikaharvey=# UPDATE COMPANY SET SALARY = 15000 WHERE ID = 3;
+UPDATE 1
+erikaharvey=# UPDATE COMPANY SET ADDRESS = "TEXAS", SALARY = 2000;
+ERROR:  column "TEXAS" does not exist
+LINE 1: UPDATE COMPANY SET ADDRESS = "TEXAS", SALARY = 2000;
+                                     ^
+erikaharvey=# DELETE FROM COMPANY WHERE ID = 2;
+DELETE 1
+erikaharvey=# DELETE FROM COMPANY
+erikaharvey-# SELECT * FROM COMPANY WHERE AGE:::text LIKE '2%';
+ERROR:  syntax error at or near "SELECT"
+LINE 2: SELECT * FROM COMPANY WHERE AGE:::text LIKE '2%';
+        ^
+erikaharvey=# SELECT * FROM COMPANY WHERE ADDRESS LIKE '%-%'
+erikaharvey-# SELECT * FROM COMPANY ORDER BY AGE ASC;
+ERROR:  syntax error at or near "SELECT"
+LINE 2: SELECT * FROM COMPANY ORDER BY AGE ASC;
+        ^
+erikaharvey=# SELECT * FROM COMPANY WHERE ADDRESS LIKE '%-%'
+SELECT * FROM COMPANY ORDER BY AGE ASC;
+ERROR:  syntax error at or near "SELECT"
+LINE 2: SELECT * FROM COMPANY ORDER BY AGE ASC;
+        ^
+erikaharvey=# SELECT NAME, SUM(SALARY) FROM COMPANY GROUP BY NAME ORDER BY NAME DESC;
+ name  |  sum
+-------+-------
+ Teddy | 15000
+ Paul  | 20000
+ Mark  | 65000
+ David | 85000
+(4 rows)
+
+erikaharvey=# WITH name_for_summary_data AS ( SELECT Statement) SELECT columns FROM name_for_summary_data WHERE conditions <=> ( SELECT column FROM name_for_summary_data) [ORDER BY columns];
+ERROR:  syntax error at or near "column"
+LINE 1: ...me_for_summary_data WHERE conditions <=> ( SELECT column FRO...
+                                                             ^
+erikaharvey=# WITH CTE AS ( SELECT ID,NAME,AGE,ADDRESS,SALARY FROM COMPANY ) Select * FROM CTE;
+ id | name  | age |                      address                       | salary
+----+-------+-----+----------------------------------------------------+--------
+  1 | Paul  |  32 | California                                         |  20000
+  4 | Mark  |  25 | Rich-Mond                                          |  65000
+  5 | David |  27 | Texas                                              |  85000
+  3 | Teddy |  23 | Norway                                             |  15000
+(4 rows)
+erikaharvey=# WITH name_for_summary_data AS ( SELECT Statement) SELECT columns FROM name_for_summary_data WHERE conditions <=> ( SELECT column FROM name_for_summary_data) [ORDER BY columns];
+ERROR:  syntax error at or near "column"
+LINE 1: ...me_for_summary_data WHERE conditions <=> ( SELECT column FRO...
+                                                             ^
+erikaharvey=# WITH CTE AS ( SELECT ID,NAME,AGE,ADDRESS,SALARY FROM COMPANY ) Select * FROM CTE;
+ id | name  | age |                      address                       | salary
+----+-------+-----+----------------------------------------------------+--------
+  1 | Paul  |  32 | California                                         |  20000
+  4 | Mark  |  25 | Rich-Mond                                          |  65000
+  5 | David |  27 | Texas                                              |  85000
+  3 | Teddy |  23 | Norway                                             |  15000
+(4 rows)
+
+erikaharvey=# WITH RECURSIVE t(n) AS ( VALUES(0) UNION ALL SELECT SALARY FROM COMPANY WHERE SALARY < 2000) SELECT sum(n) FROM t;
+ sum
+-----
+   0
+(1 row)
+
+erikaharvey=#
+erikaharvey=#
+erikaharvey=#
+erikaharvey=#
+erikaharvey=# CREATE TABLE COMPANY1( ID INT PRIMARY KEY NOT NULL,NAME TEXT NOT NULL, AGE INT NOT NULL, ADDRESS CHAR(50),SALARY REAL); WITH moved_rows AS ( DELETE FROM COMPANY WHERE SALARY >= 3000 RETURNING *) INSERT INTO COMPANY1 (SELECT * FROM moved_rows);
+CREATE TABLE
+ERROR:  INSERT has more expressions than target columns
+LINE 1: ...>= 3000 RETURNING *) INSERT INTO COMPANY1 (SELECT * FROM mov...
+                                                             ^
+erikaharvey=# CREATE TABLE COMPANY1(
+erikaharvey(#    ID INT PRIMARY KEY     NOT NULL,
+erikaharvey(#    NAME           TEXT    NOT NULL,
+erikaharvey(#    AGE            INT     NOT NULL,
+erikaharvey(#    ADDRESS        CHAR(50),
+erikaharvey(#    SALARY         REAL
+erikaharvey(# );
+ERROR:  relation "company1" already exists
+erikaharvey=#
+erikaharvey=# WITH moved_rows AS (
+erikaharvey(#     DELETE FROM COMPANY
+erikaharvey(#     WHERE
+erikaharvey(#         SALARY >= 30000
+erikaharvey(#     RETURNING *
+erikaharvey(# )
+erikaharvey-# INSERT INTO COMPANY1 (SELECT * FROM moved_rows);
+ERROR:  INSERT has more expressions than target columns
+LINE 7: INSERT INTO COMPANY1 (SELECT * FROM moved_rows);
+                                     ^
+erikaharvey=# /* SELECT
+erikaharvey*# FROM
+erikaharvey*# WHERE
+erikaharvey*# GROUP BY
+erikaharvey*# HAVING
+erikaharvey*# ORDER BY */
+erikaharvey-#  SELECT NAME FROM COMPANY GROUP BY name HAVING count(name) < 2;
+ name
+-------
+ Teddy
+ Paul
+ Mark
+ David
+(4 rows)
+
+erikaharvey=# INSERT INTO COMPANY VALUES (8, 'Paul', 24, 'Houston', 20000.00);
+INSERT 0 1
+erikaharvey=# INSERT INTO COMPANY VALUES (9, 'James', 44, 'Norway', 5000.00);
+INSERT 0 1
+erikaharvey=# INSERT INTO COMPANY VALUES (10, 'James', 45, 'Texas', 5000.00);
+INSERT 0 1
+erikaharvey=#  SELECT NAME FROM COMPANY GROUP BY name HAVING count(name) > 1;
+ name
+-------
+ Paul
+ James
+(2 rows)
+erikaharvey=# INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY)
+erikaharvey-# VALUES (8, 'Paul', 32, 'California', 20000.00 );
+ERROR:  duplicate key value violates unique constraint "company_pkey"
+DETAIL:  Key (id)=(8) already exists.
+erikaharvey=#
+erikaharvey=# INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY)
+erikaharvey-# VALUES (9, 'Allen', 25, 'Texas', 15000.00 );
+ERROR:  duplicate key value violates unique constraint "company_pkey"
+DETAIL:  Key (id)=(9) already exists.
+erikaharvey=# INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY)
+VALUES ( 'Allen', 25, 'Texas', 15000.00 );
+ERROR:  INSERT has more target columns than expressions
+LINE 1: INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY)
+                                                 ^
+erikaharvey=# INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY)
+VALUES (15, 'Allen', 25, 'Texas', 15000.00 );
+INSERT 0 1
+erikaharvey=# SELECT name FROM COMPANY;
+ name
+-------
+ Paul
+ Mark
+ David
+ Teddy
+ Paul
+ James
+ James
+ Allen
+(8 rows)
+
+erikaharvey=# SELECT DISTINCT name FROM COMPANY;
+ name
+-------
+ Teddy
+ Paul
+ Mark
+ David
+ Allen
+ James
+(6 rows)
