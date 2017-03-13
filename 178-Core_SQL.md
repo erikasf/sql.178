@@ -4,7 +4,7 @@ authors:
 issueNumber: 178
 teamSize: 1
 ---
-
+TEAM NAME https://echo.learnersguild.org/channel/imported-serval
 # Core SQL
 
 ## Challenge Rating
