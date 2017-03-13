@@ -544,4 +544,4 @@ erikaharvey=#
 erikaharvey=# INSERT INTO DEPARTMENT (ID, DEPT, EMP_ID)
 erikaharvey-# VALUES (3, 'Finance', 7 );
 INSERT 0 1
-erikaharvey=#
+erikaharvey=# x
